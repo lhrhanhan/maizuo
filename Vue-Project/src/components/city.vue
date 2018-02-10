@@ -51,26 +51,18 @@
     },
     mounted () {
       this.$request({
-        type:'GET',
+        type: 'GET',
         url: 'api/city?__t=1515937073340',
         success: function (res) {
-          // console.log(res.data.data.cities)
           this.bigArr = res.data.data.cities
-          // for (let a in this.bigArr) {
-          //   let firstzimu = this.bigArr[a].pinyin.split('')[0]
-          //   let city = this.bigArr[a].name.split()
-          // }
-
           var letter = []
-          let obj = {}
-          for(var i=0;i<26;i++){
-            obj.zimu = String.fromCharCode(65+i)
+          for (var i = 0; i < 26; i++) {
+            let obj = {}
+            obj.zimu = String.fromCharCode(65 + i)
             obj.city = []
             letter.push(obj)
-
           }
           console.log(letter)
-
         }
       })
     },
